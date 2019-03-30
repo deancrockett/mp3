@@ -1,6 +1,8 @@
 QUESTION 1:
 These 11 lines are performing a check-and-add function that is repeated later in another method.
-These lines can easily be refactored by extracting them to a new public method in the same file.
+These lines can easily be refactored by copying them to a new public method in the same file.
 This method is called tryAddPluginToMap() and has 2 parameters, for the pluginmap and an iterative variable for the plugin.
 
-QUESTION 2:
+QUESTION 3:
+This new method updateAndTrim currently still belongs to the Nodes class.
+We can refactor this by extracting the method to another class, and by calling the method within the Nodes class as a method of jenkins (jenkins.updateAndTrim() rather than updateAndTrim)
