@@ -1,0 +1,6 @@
+QUESTION 1:
+These 11 lines are performing a check-and-add function that is repeated later in another method.
+These lines can easily be refactored by extracting them to a new public method in the same file.
+This method is called tryAddPluginToMap() and has 2 parameters, for the pluginmap and an iterative variable for the plugin.
+
+QUESTION 2:
