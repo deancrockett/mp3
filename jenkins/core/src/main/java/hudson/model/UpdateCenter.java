@@ -554,7 +554,7 @@ public class UpdateCenter extends AbstractModelObject implements Saveable, OnMas
     
     //NEW method to update plugin map
     //refactored from original loop
-    public void updateMap(Map<String,Plugin> pluginMap, Plugin plugin) {
+    public void tryAddPluginToMap(Map<String,Plugin> pluginMap, Plugin plugin) {
 	    final Plugin existing = pluginMap.get(plugin.name);
 	    if (existing == null) {
 	        pluginMap.put(plugin.name, plugin);
@@ -573,7 +573,7 @@ public class UpdateCenter extends AbstractModelObject implements Saveable, OnMas
         for (UpdateSite site : sites) {
             for (Plugin plugin: site.getAvailables()) {
             	//call refactored update plugin map method
-                updateMap(pluginMap, plugin);
+                tryAddPluginToMap(pluginMap, plugin);
             }
         }
 
@@ -612,7 +612,7 @@ public class UpdateCenter extends AbstractModelObject implements Saveable, OnMas
         for (UpdateSite site : sites) {
             for (Plugin plugin: site.getUpdates()) {
             	//call refactored update plugin map method
-            	updateMap(pluginMap, plugin);
+            	tryAddPluginToMap(pluginMap, plugin);
             }
         }
 
