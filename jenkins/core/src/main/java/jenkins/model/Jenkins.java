@@ -351,8 +351,7 @@ public class Jenkins extends AbstractCIBase implements DirectlyModifiableTopLeve
     /**
      * Controls how the
      * <a href="http://en.wikipedia.org/wiki/Authorization">authorization</a>
-     * is handled in Jenkins.
-     * <p>
+     * is handled in Jenkins. 
      * This ultimately controls who has access to what.
      *
      * Never null.
@@ -1220,9 +1219,27 @@ public class Jenkins extends AbstractCIBase implements DirectlyModifiableTopLeve
         return null;
     }
 
+    
+    
+    
+    //REFACTORED Update And Trim method (from Nodes.java)
+ 	public void updateAndTrim() {
+ 		//Call jenkins.updatecomputerlist (below)
+ 		updateComputerList();
+ 		//call trimlabels (line 1755)
+ 		trimLabels();
+ 	}
+    
+    
+    
+    
+    
+    
+    
     protected void updateComputerList() {
         updateComputerList(AUTOMATIC_SLAVE_LAUNCH);
     }
+    
 
     /** @deprecated Use {@link SCMListener#all} instead. */
     @Deprecated
