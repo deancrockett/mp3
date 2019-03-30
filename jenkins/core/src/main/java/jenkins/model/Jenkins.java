@@ -1221,7 +1221,7 @@ public class Jenkins extends AbstractCIBase implements DirectlyModifiableTopLeve
 
     
     
-    //
+    
     //REFACTORED Update And Trim method (from Nodes.java)
  	public void updateAndTrim() {
  		//Call jenkins.updatecomputerlist (below)
